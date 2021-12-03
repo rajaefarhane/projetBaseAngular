@@ -1,0 +1,71 @@
+<p></p>
+<div class="container">
+    <div class=" panel ">
+       <!-- *************************partie about****************************-->
+        <div class="panel-heading bg-primary text-center"><h3>About</h3></div>
+        <div class="panel-body">
+            <div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                    <strong>nom : {{info.nom}}</strong> 
+                    </li>
+                    <li class="list-group-item">
+                        <strong>email : {{info.email}}</strong> 
+                    </li>
+                    <li class="list-group-item">
+                        <strong>telephone : {{info.telephone}}</strong> 
+                    </li>
+                </ul>
+        
+            </div>
+          
+        </div>
+        <!-- *****************************partie formulaire****************************************-->
+        
+    <!-- *****************solution 1 pour disabled le bouton******************
+         <div class="form-group">
+                <div class="mb-3">
+                    <div class="panel-heading bg-primary text-center my-4 mb-4"><h2>Ajouter commentaire</h2></div>
+                     <input  type="text" class="form-control-lable" [(ngModel)]="commentaire.message">
+                </div>
+                <div class="text-center">
+                  <button [disabled]="!commentaire.message"type="submit" class="btn btn-primary" (click)=onAddCommentaire()>Submit</button>
+                </div>
+
+            </div>
+        ******************le fonction est :
+         onAddCommentaire(){
+    this.commentaire.date=new Date();
+  
+    this.comments.push(this.commentaire);
+    this.commentaire={date:new Date(),message:""};
+  }
+************ fin fonction
+        
+        -->
+        <form #f="ngForm" (ngSubmit)="onAddCommentaire(f.value)">
+            <div class="form-group">
+                <div class="mb-3">
+                    <div class="panel-heading bg-primary text-center my-4 mb-4"><h2>Ajouter commentaire</h2></div>
+                     <input  required="" name="message" ngModel="" type="text" class="form-control-lable" [(ngModel)]="commentaire.message">
+                </div>
+                <div class="text-center">
+                  <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+        </form>
+        <!-- ***************************** partie commentaire***********************************-->
+        <div class="my-2">
+            <div class="panel-heading bg-primary text-center my-4 mb-4"><h2>Commentaires</h2></div>
+            <ul  class="list-group">
+                    
+                <li class="list-group-item" *ngFor="let c of comments">
+        {{c.message}},
+        <div class="text-right">  <span class="badge bg-secondary" >{{c.date|date:'dd/MM/yyyy:HH:mm:ss'}}</span></div>
+       
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
