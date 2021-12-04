@@ -1,0 +1,34 @@
+<div class="container"> 
+    <div class="panel-heading ">
+        <div class="panel-heading bg-primary text-center my-4"><h3>gallery componnent</h3></div>
+        <div class="panel-body">
+          <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
+            <div class="form-group">
+                <div class="mb-3">
+                    <div class="panel-heading bg-primary text-center my-4 mb-4"><h2>mot clé :</h2></div>
+                     <div class="text-center">
+                      <input  required=""  placeholder="taper un mot " name="motcle" ngModel="" type="text" class="form-control-lable" >
+                    </div>
+                </div>
+                <div class="text-center">
+                  <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Chercher</button>
+                </div>
+            </div>
+          </form>
+          
+          <div class="row mb-4 my-4">
+            <div class="col-sm-4 mb-4" *ngFor="let p of pagePhoto?.hits">
+      
+          <div class="card" style="width: 18rem;" >
+            <img class="img-fluid img-thumbnail" src="{{p.previewURL}}" alt="Card image cap">
+            <div class="card-body bg-success">
+              <h5 class="card-title ">{{p.tags}}</h5>
+            
+            </div>
+          </div>
+       </div>
+    </div>
+        </div>
+    </div>
+    
+</div>

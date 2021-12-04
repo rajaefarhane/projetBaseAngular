@@ -54,7 +54,9 @@
             <div class="form-group">
                 <div class="mb-3">
                     <div class="panel-heading bg-primary text-center my-4 mb-4"><h2>Ajouter commentaire</h2></div>
-                     <input  required="" name="message" ngModel="" type="text" class="form-control-lable" [(ngModel)]="commentaire.message">
+                     <div class="text-center">
+                      <input  required=""  placeholder="ajouter un commentaire" name="message" ngModel="" type="text" class="form-control-lable" [(ngModel)]="commentaire.message">
+                    </div>
                 </div>
                 <div class="text-center">
                   <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Submit</button>
