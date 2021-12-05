@@ -7,7 +7,7 @@
                 <div class="mb-3">
                     <div class="panel-heading bg-primary text-center my-4 mb-4"><h2>mot clé :</h2></div>
                      <div class="text-center">
-                      <input  required=""  placeholder="taper un mot " name="motcle" ngModel="" type="text" class="form-control-lable" >
+                      <input  required=""  placeholder="taper un mot " name="motcle" ngModel="" type="text" class="form-control-lable" [(ngModel)]="motCle" >
                     </div>
                 </div>
                 <div class="text-center">
@@ -29,6 +29,17 @@
        </div>
     </div>
         </div>
+        <div class="row">
+      
+          <ul class="nav nav-pills">
+            <li *ngFor="let page of pages | paginate: { itemsPerPage: 10, currentPage: p }">
+       
+           
+            </li>
+          </ul>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          
+        </div>
     </div>
-    
+
 </div>

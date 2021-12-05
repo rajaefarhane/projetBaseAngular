@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { AboutService } from 'src/services/about.service';
 import {Routes,RouterModule} from '@angular/router';
 import { GalleryComponent } from './gallery/gallery.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 const routes:Routes=[
 
@@ -16,13 +18,17 @@ const routes:Routes=[
   declarations: [
     AppComponent,
     routingComponents,
-    GalleryComponent
+   
+    GalleryComponent,
+  
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule, NgxPaginationModule
    
 
   ],

@@ -10,6 +10,7 @@ export class AboutComponent implements core.OnInit {
   info:any;
   comments:any[];
 commentaire={date:new Date(),message:""};
+  
 //ca c'est l'injetion des service 
 
   constructor(private aboutService: AboutService) {
@@ -26,5 +27,6 @@ commentaire={date:new Date(),message:""};
     this.comments=this.aboutService.getAllComments();
 
   }
+
 
 }
